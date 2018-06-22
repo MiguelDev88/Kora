@@ -12,7 +12,8 @@ public class Start {
         
         Database.Create();
         try{
-            Listen.ambientListening();
+            //Listen.ambientListening();
+            Core.batteryLevel();
         }
         catch(Exception e){
             e.printStackTrace();
