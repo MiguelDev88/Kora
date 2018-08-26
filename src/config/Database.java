@@ -3,6 +3,9 @@ import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import runnable.Console;
+import runnable.Core;
+import runnable.Speaker;
 
 
 
@@ -11,13 +14,13 @@ import java.sql.Statement;
 public class Database {
     
     
-    private static final String URL = "localhost";
+    private static final String URL = "192.168.178.150";
     private static final String PORT = "3306";
-    private static final String USER = "root";
-    private static final String PASSWORD = "";
+    private static final String USER = "miguel";
+    private static final String PASSWORD = "miguelDev";
     
     
-    public static void Create(){
+    public static boolean Create(){
         try{
             Connection connection = Connect();
             Statement statement=connection.createStatement();
@@ -31,8 +34,10 @@ public class Database {
                                     " PRIMARY KEY (variable)" +
                                     ") ENGINE=InnoDB DEFAULT CHARSET=latin1");
             connection.close();
+            return true;
         }catch(SQLException e){
             System.out.println(e.getMessage());
+            return false;
         }
         
     }

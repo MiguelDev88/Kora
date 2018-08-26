@@ -8,7 +8,12 @@ import java.sql.Statement;
 // @author Miguel
 
 public class Settings {
-      
+    
+    public static String user = "Miguel";
+    public static int textSpeed = 50;
+    public static String defaultVoice = "veena";
+    
+    
     public static String getSetting(String val){
         String response="";
         try{
